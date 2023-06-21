@@ -1,13 +1,24 @@
 {
-  "devDependencies": {
-    "cypress": "^12.14.0"
-  },
+  "name": "automations",
+  "version": "1.0.0",
+  "description": "Run Cypress tests and generates JUnit results",
+  "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "install": "npm install"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adtractive/automations.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adtractive/automations/issues"
+  },
+  "homepage": "https://github.com/Adtractive/automations#readme",
   "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/exec": "^1.1.1"
+    "@actions/core": "^1.6.0",
+    "@actions/exec": "^1.1.0"
   }
 }
