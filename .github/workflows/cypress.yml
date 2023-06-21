@@ -2,7 +2,7 @@ name: Run Cypress Tests
 
 on:
   repository_dispatch:
-    types: do-something
+    types: run-tests
 
 jobs:
   cypress-run:
@@ -25,13 +25,3 @@ jobs:
         run: |
           npm run test -- --reporter junit --reporter-options "mochaFile=results.xml"
           echo "::set-output name=results::$(cat results.xml)"
-
-      - name: Send Test Results via Webhook
-        if: always()
-        run: |
-          payload=$(jq -n \
-            --arg wf "Run Cypress Tests" \
-            --arg st "${{ job.status }}" \
-            --arg rs "${{ steps.cypress.outputs.results }}" \
-            '{workflow: $wf, status: $st, failedSteps: $rs}')
-          curl -X GET 'https://n8n.adtractive.io/webhook-test/3a51a4fa-ff2b-4ecb-b954-cc4dfea545e6' -H 'Content-Type: application/json' -d "$payload"
