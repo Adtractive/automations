@@ -1,14 +1,9 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
+const fs = require('fs');
 
 async function run() {
   try {
-    // Checkout Repository
-    await exec.exec('actions/checkout@v2');
-
-    // Setup Node.js
-    await exec.exec('actions/setup-node@v2', { 'with': { 'node-version': '14' } });
-
     // Install Dependencies
     await exec.exec('npm', ['install']);
 
