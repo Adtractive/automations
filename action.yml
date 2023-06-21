@@ -1,5 +1,0 @@
-name: 'Run Cypress Tests'
-description: 'Runs Cypress tests and generates JUnit results'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
