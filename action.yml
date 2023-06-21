@@ -1,19 +1,5 @@
 name: 'Run Cypress Tests'
 description: 'Runs Cypress tests and generates JUnit results'
 runs:
-  using: 'composite'
-  steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-      with:
-        repository: 'Adtractive/automations'
-        ref: 'main'
-        path: './'
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - run: npm ci
-      shell: bash
-    - run: node index.js
-      shell: bash
+  using: 'docker'
+  image: 'Dockerfile'
