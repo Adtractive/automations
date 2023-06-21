@@ -4,3 +4,4 @@ description: 'Runs Cypress tests and generates JUnit results'
 runs:
   using: 'node12'
   main: 'index.js'
+

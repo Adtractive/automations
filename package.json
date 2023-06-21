@@ -3,7 +3,8 @@
     "cypress": "^12.14.0"
   },
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "install": "npm install"
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
