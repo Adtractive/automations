@@ -7,7 +7,8 @@ WORKDIR /github/workspace
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 COPY package*.json ./
 
-RUN npm ci --only=production
+RUN npm cache clean --force
+RUN npm ci
 
 # Bundle app source
 COPY . .
