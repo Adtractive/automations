@@ -2,7 +2,7 @@
   "name": "automations",
   "version": "1.0.0",
   "description": "Run Cypress tests and generates JUnit results",
-  "main": "github/workspace/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "cypress run"
   },
