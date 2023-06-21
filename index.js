@@ -4,9 +4,6 @@ const fs = require('fs');
 
 async function run() {
   try {
-    // Install Dependencies
-    await exec.exec('npm', ['install']);
-
     // Run Cypress Tests
     const execOptions = { listeners: { stdout: (data) => console.log(data.toString()) } };
     await exec.exec('npm', ['run', 'test', '--', '--reporter', 'junit', '--reporter-options', 'mochaFile=results.xml'], execOptions);
